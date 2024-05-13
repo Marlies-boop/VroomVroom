@@ -8,11 +8,10 @@ using UnityEngine.InputSystem.Users;
 public class CarInput : MonoBehaviour
 {
     CarClass carInput;
-    string inputType = "KBM";
+    string inputType = "KBM"; // use this to know which control scheme is active
     float driveValue;
     float steerValue;
     float lookValue;
-    float timeNotLooking;
     int cameraType = 1;
     int gear = 1;
     int maxGear = 6;
@@ -110,15 +109,5 @@ public class CarInput : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        //else if (transform.rotation.y > 0.1f || transform.rotation.y < -0.1f && lookValue < 0.1f && lookValue > -0.1f && timeNotLooking < 1f)
-        //{
-        //    timeNotLooking += Time.deltaTime;
-
-        //    if (timeNotLooking >= 1f)
-        //    {
-        //        transform.rotation = Quaternion.Euler(0, 0, 0);
-        //        timeNotLooking = 0;
-        //    }
-        //}
     }
 }
