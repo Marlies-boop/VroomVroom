@@ -7,7 +7,6 @@ public class Camera : MonoBehaviour
     public GameObject Camera1;
     public GameObject Camera2;
     public GameObject Camera3;
-
     void Update()
     {
         if (Input.GetKeyDown("1"))
