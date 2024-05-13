@@ -24,9 +24,10 @@ public class CarControllerTemp : MonoBehaviour
             wheel.motorTorque = strength * Time.deltaTime * inputmanager.throttle;
         }
 
-        foreach (WheelCollider wheel in steeringwheels)
+        foreach (GameObject wheel in steeringwheels)
         {
-            wheel.steerAngle = maxturn * inputmanager.steering;
+            wheel.GetComponent<WheelCollider>steerAngle = maxturn * inputmanager.steering;
+            wheel.transform.localEulerAngles = new Vector3(0f, inputmanager.steering + maxturn, 0f);
         }
     }
 }

@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class InputManTemp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public float throttle;
+    public float steering;
     // Update is called once per frame
     void Update()
     {
-        
+        throttle = Input.GetAxis("Vertical");
+        steering = Input.GetAxis("Horizontal");
     }
 }
