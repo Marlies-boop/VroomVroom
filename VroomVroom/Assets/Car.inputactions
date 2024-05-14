@@ -453,6 +453,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Rumble",
+            "id": "248f79e7-3a06-4285-91b1-10619f9ab310",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "ccce3dc9-eab9-4810-ba62-9cc063c963d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "926334b6-7860-4fa4-939c-e0c03673406a",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
