@@ -14,9 +14,10 @@ public class Timer : MonoBehaviour
     public Text timeText;
     public float timeScale;
 
+    public Text lapsText;
     private int lapsCompleted;
     public int totalLaps;
-
+   
     void Update()
     {
         seconds += (Time.deltaTime * timeScale);
@@ -35,7 +36,14 @@ public class Timer : MonoBehaviour
             minutes = minutes - 60f;
         }
 
-        timeText.text = hours + ":" + minutes + ":" + finalizedTime.ToString();
+        UpdateUIText();
+        //timeText.text = hours + ":" + minutes + ":" + finalizedTime.ToString();
+    }
+
+    void UpdateUIText()
+    {
+        timeText.text = hours + ":" + minutes + ":" + Mathf.RoundToInt(seconds).ToString();
+        lapsText.text = "Laps: " + lapsCompleted + "/" + totalLaps;
     }
 
     private void OnTriggerEnter(Collider other)
