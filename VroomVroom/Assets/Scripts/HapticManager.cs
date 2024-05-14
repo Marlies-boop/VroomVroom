@@ -13,6 +13,7 @@ public class HapticManager : MonoBehaviour
     
     void Awake()
     {
+        Debug.Log("I'm waking up");
         if (Instance != null)
         {
             Debug.Log("Attempting to create second haptic manager on" + gameObject.name);
@@ -24,11 +25,13 @@ public class HapticManager : MonoBehaviour
 
     public static HapticEffectSO PlayEffect(HapticEffectSO effect, Vector3 location)
     {
+        Debug.Log("Playing effect");
         return Instance.PlayEffect_Internal(effect, location);
     }
 
     public static void StopEffect(HapticEffectSO effect)
     {
+        Debug.Log("Stopping effect");
         Instance.StopEffect_Internal(effect);
     }
 
@@ -67,9 +70,11 @@ public class HapticManager : MonoBehaviour
 
         float lowSpeedMotor = 0f;
         float highSpeedMotor = 0f;
-
-        for (int index = 0; index < ActiveEffects.Count; index++)
+        Debug.Log(ActiveEffects.Count);
+        for (int index = 0; index <= ActiveEffects.Count; index++)
         {
+            Debug.Log($"Active effects {ActiveEffects.Count}");
+            Debug.Log($"index = {index}");
             var effect = ActiveEffects[index];
 
             //tick the effect and clean up when finished
@@ -78,12 +83,13 @@ public class HapticManager : MonoBehaviour
             if (effect.Tick(Camera.main.transform.position, out lowSpeedComponent, out highSpeedComponent))
             {
                 ActiveEffects.RemoveAt(index);
-                --index;
+                //--index;
             }
 
-            //Debug.Log(lowSpeedComponent + ", " + highSpeedComponent);
-
+            Debug.Log(lowSpeedComponent + ", " + highSpeedComponent);
+            
             lowSpeedMotor = Mathf.Clamp01(lowSpeedComponent + lowSpeedMotor);
+            Debug.Log($"lowSpeedMotor = {lowSpeedMotor}");
             highSpeedMotor = Mathf.Clamp01(highSpeedComponent + highSpeedMotor);
         }
         print(Gamepad.current);
@@ -109,6 +115,7 @@ public class HapticManager : MonoBehaviour
         activeEffect.Initialise(location);
 
         ActiveEffects.Add(activeEffect);
+        Debug.Log($"Active effects {ActiveEffects.Count}");
 
         return activeEffect;
     }
@@ -116,5 +123,6 @@ public class HapticManager : MonoBehaviour
     void StopEffect_Internal(HapticEffectSO effect)
     {
         ActiveEffects.Remove(effect);
+        Debug.Log("Removing effect");
     }
 }
