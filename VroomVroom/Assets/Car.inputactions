@@ -24,13 +24,22 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
+                    "name": "LookH",
                     "type": "Value",
                     "id": "b704fe28-2b35-4531-a264-8ac843f3001e",
                     "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "LookV",
+                    "type": "Button",
+                    "id": "be3caad0-39f5-4eab-a488-22acf8e32a6d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Gears",
@@ -145,7 +154,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Playstation Controller",
-                    "action": "Look",
+                    "action": "LookH",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -343,7 +352,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox Controller",
-                    "action": "Look",
+                    "action": "LookH",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -399,6 +408,28 @@
                     "processors": "",
                     "groups": "Xbox Controller",
                     "action": "ChangeCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0f39cf3d-af9e-4ffa-bf54-a7c55cf1957f",
+                    "path": "<DualShockGamepad>/rightStick/Y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation Controller",
+                    "action": "LookV",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ccdbb2a0-117d-45d3-ad55-a1b33c738416",
+                    "path": "<XInputController>/rightStick/Y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox Controller",
+                    "action": "LookV",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

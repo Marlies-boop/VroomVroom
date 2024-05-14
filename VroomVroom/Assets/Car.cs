@@ -46,13 +46,22 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Look"",
+                    ""name"": ""LookH"",
                     ""type"": ""Value"",
                     ""id"": ""b704fe28-2b35-4531-a264-8ac843f3001e"",
                     ""expectedControlType"": ""Stick"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LookV"",
+                    ""type"": ""Button"",
+                    ""id"": ""be3caad0-39f5-4eab-a488-22acf8e32a6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Gears"",
@@ -167,7 +176,7 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Playstation Controller"",
-                    ""action"": ""Look"",
+                    ""action"": ""LookH"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -365,7 +374,7 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Xbox Controller"",
-                    ""action"": ""Look"",
+                    ""action"": ""LookH"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -421,6 +430,28 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Xbox Controller"",
                     ""action"": ""ChangeCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f39cf3d-af9e-4ffa-bf54-a7c55cf1957f"",
+                    ""path"": ""<DualShockGamepad>/rightStick/Y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Playstation Controller"",
+                    ""action"": ""LookV"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ccdbb2a0-117d-45d3-ad55-a1b33c738416"",
+                    ""path"": ""<XInputController>/rightStick/Y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Controller"",
+                    ""action"": ""LookV"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -504,7 +535,8 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         m_Car = asset.FindActionMap("Car", throwIfNotFound: true);
         m_Car_Drive = m_Car.FindAction("Drive", throwIfNotFound: true);
         m_Car_Steer = m_Car.FindAction("Steer", throwIfNotFound: true);
-        m_Car_Look = m_Car.FindAction("Look", throwIfNotFound: true);
+        m_Car_LookH = m_Car.FindAction("LookH", throwIfNotFound: true);
+        m_Car_LookV = m_Car.FindAction("LookV", throwIfNotFound: true);
         m_Car_Gears = m_Car.FindAction("Gears", throwIfNotFound: true);
         m_Car_Pause = m_Car.FindAction("Pause", throwIfNotFound: true);
         m_Car_ChangeCamera = m_Car.FindAction("ChangeCamera", throwIfNotFound: true);
@@ -574,7 +606,8 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
     private List<ICarActions> m_CarActionsCallbackInterfaces = new List<ICarActions>();
     private readonly InputAction m_Car_Drive;
     private readonly InputAction m_Car_Steer;
-    private readonly InputAction m_Car_Look;
+    private readonly InputAction m_Car_LookH;
+    private readonly InputAction m_Car_LookV;
     private readonly InputAction m_Car_Gears;
     private readonly InputAction m_Car_Pause;
     private readonly InputAction m_Car_ChangeCamera;
@@ -584,7 +617,8 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         public CarActions(@CarClass wrapper) { m_Wrapper = wrapper; }
         public InputAction @Drive => m_Wrapper.m_Car_Drive;
         public InputAction @Steer => m_Wrapper.m_Car_Steer;
-        public InputAction @Look => m_Wrapper.m_Car_Look;
+        public InputAction @LookH => m_Wrapper.m_Car_LookH;
+        public InputAction @LookV => m_Wrapper.m_Car_LookV;
         public InputAction @Gears => m_Wrapper.m_Car_Gears;
         public InputAction @Pause => m_Wrapper.m_Car_Pause;
         public InputAction @ChangeCamera => m_Wrapper.m_Car_ChangeCamera;
@@ -603,9 +637,12 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
             @Steer.started += instance.OnSteer;
             @Steer.performed += instance.OnSteer;
             @Steer.canceled += instance.OnSteer;
-            @Look.started += instance.OnLook;
-            @Look.performed += instance.OnLook;
-            @Look.canceled += instance.OnLook;
+            @LookH.started += instance.OnLookH;
+            @LookH.performed += instance.OnLookH;
+            @LookH.canceled += instance.OnLookH;
+            @LookV.started += instance.OnLookV;
+            @LookV.performed += instance.OnLookV;
+            @LookV.canceled += instance.OnLookV;
             @Gears.started += instance.OnGears;
             @Gears.performed += instance.OnGears;
             @Gears.canceled += instance.OnGears;
@@ -625,9 +662,12 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
             @Steer.started -= instance.OnSteer;
             @Steer.performed -= instance.OnSteer;
             @Steer.canceled -= instance.OnSteer;
-            @Look.started -= instance.OnLook;
-            @Look.performed -= instance.OnLook;
-            @Look.canceled -= instance.OnLook;
+            @LookH.started -= instance.OnLookH;
+            @LookH.performed -= instance.OnLookH;
+            @LookH.canceled -= instance.OnLookH;
+            @LookV.started -= instance.OnLookV;
+            @LookV.performed -= instance.OnLookV;
+            @LookV.canceled -= instance.OnLookV;
             @Gears.started -= instance.OnGears;
             @Gears.performed -= instance.OnGears;
             @Gears.canceled -= instance.OnGears;
@@ -740,7 +780,8 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
     {
         void OnDrive(InputAction.CallbackContext context);
         void OnSteer(InputAction.CallbackContext context);
-        void OnLook(InputAction.CallbackContext context);
+        void OnLookH(InputAction.CallbackContext context);
+        void OnLookV(InputAction.CallbackContext context);
         void OnGears(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnChangeCamera(InputAction.CallbackContext context);
