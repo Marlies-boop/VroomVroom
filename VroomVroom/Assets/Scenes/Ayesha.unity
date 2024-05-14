@@ -1976,7 +1976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 563606546}
-  timeScale: 1
+  timeScale: 20
 --- !u!4 &884543004
 Transform:
   m_ObjectHideFlags: 0
