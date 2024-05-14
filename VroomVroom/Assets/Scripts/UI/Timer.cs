@@ -14,6 +14,9 @@ public class Timer : MonoBehaviour
     public Text timeText;
     public float timeScale;
 
+    private int lapsCompleted;
+    public int totalLaps;
+
     void Update()
     {
         seconds += (Time.deltaTime * timeScale);
@@ -33,5 +36,18 @@ public class Timer : MonoBehaviour
         }
 
         timeText.text = hours + ":" + minutes + ":" + finalizedTime.ToString();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("FinishLine"))
+        {
+            lapsCompleted++;
+
+            if (lapsCompleted >= totalLaps)
+            {
+                isRunning = false;
+            }
+        }
     }
 }
