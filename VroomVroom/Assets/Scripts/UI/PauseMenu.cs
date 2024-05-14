@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool Paused = false;
     public GameObject PauseMenuCanvas;
+    public Transform respawnPoint;
 
     void Start()
     {
@@ -44,5 +45,14 @@ public class PauseMenu : MonoBehaviour
     public void MainMenuButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void Respawn()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.transform.position = respawnPoint.position;
+        player.transform.rotation = respawnPoint.rotation;
+
+        Play();
     }
 }
