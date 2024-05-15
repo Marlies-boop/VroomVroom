@@ -17,9 +17,12 @@ public class RumbleZone : MonoBehaviour
         {
             // players now in the zone - start the effect
             if (PlayersInZone.Count == 0)
+            {
                 ActiveEffect = HapticManager.PlayEffect(HapticEffect, transform.position);
+            }
 
             PlayersInZone.Add(other.gameObject);
+            Debug.Log($"Player in zone = {PlayersInZone.Count}");
         }
     }
 
@@ -33,6 +36,7 @@ public class RumbleZone : MonoBehaviour
             if (PlayersInZone.Count == 0)
             {
                 HapticManager.StopEffect(ActiveEffect);
+                Debug.Log("player is outside rumble zone");
                 ActiveEffect = null;
             }
         }

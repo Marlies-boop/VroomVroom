@@ -71,7 +71,7 @@ public class HapticManager : MonoBehaviour
         float lowSpeedMotor = 0f;
         float highSpeedMotor = 0f;
         Debug.Log(ActiveEffects.Count);
-        for (int index = 0; index <= ActiveEffects.Count; index++)
+        for (int index = 0; index < ActiveEffects.Count; ++index)
         {
             Debug.Log($"Active effects {ActiveEffects.Count}");
             Debug.Log($"index = {index}");
@@ -83,7 +83,7 @@ public class HapticManager : MonoBehaviour
             if (effect.Tick(Camera.main.transform.position, out lowSpeedComponent, out highSpeedComponent))
             {
                 ActiveEffects.RemoveAt(index);
-                //--index;
+                --index;
             }
 
             Debug.Log(lowSpeedComponent + ", " + highSpeedComponent);
