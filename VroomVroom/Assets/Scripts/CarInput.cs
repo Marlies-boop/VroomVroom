@@ -4,11 +4,13 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
+using UnityEngine.InputSystem.DualShock;
+using UnityEngine.InputSystem.XInput;
+using UnityEngine.InputSystem.Controls;
 
 public class CarInput : MonoBehaviour
 {
     CarClass carInput;
-    string inputType = "KBM"; // use this to know which control scheme is active
     float driveValue;
     float steerValue;
     float horLookValue;
@@ -17,7 +19,7 @@ public class CarInput : MonoBehaviour
     int gear = 1;
     int maxGear = 6;
     int minGear = 1;
-    GameObject camera;
+    GameObject cam;
 
     private void Awake()
     {
@@ -34,13 +36,12 @@ public class CarInput : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        camera = GameObject.Find("Main Camera");
+        cam = GameObject.Find("Main Camera");
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckDeviceType();
 
         if (carInput.Car.Pause.WasPressedThisFrame())
         {
@@ -51,7 +52,7 @@ public class CarInput : MonoBehaviour
         driveValue = carInput.Car.Drive.ReadValue<float>(); // sets value for driving
         steerValue = carInput.Car.Steer.ReadValue<float>(); // sets value for steering
         horLookValue = carInput.Car.LookH.ReadValue<float>(); // sets values for right stick looking
-        verLookValue = carInput.Car.LookV.ReadValue<float>(); // sets values for right stick looking
+        verLookValue = carInput.Car.RearView.ReadValue<float>(); // sets values for right stick looking
 
         if (carInput.Car.Gears.WasPressedThisFrame())
         {
@@ -76,51 +77,20 @@ public class CarInput : MonoBehaviour
 
         
     }
-    void CheckDeviceType()
-    {
-        if (inputType != "KBM" && Input.anyKey || Input.GetMouseButtonDown(0))
-        {
-            inputType = "KBM";
-            // refresh UI hints to show new keybinds
-        }
-        else if (Gamepad.current != null && Gamepad.current.name.Contains("Xbox"))
-        {
-            inputType = "Xbox";
-            //if (inputType != "PS" && Input.GetJoystickNames().Contains("PlayStation") || Input.GetJoystickNames().Contains("Sony"))
-            //{
-            //    inputType = "PS";
-            //    // refresh UI hints to show new keybinds
-            //}
-            //else if (inputType != "Xbox" && Input.GetJoystickNames().Contains("Xbox"))
-            //{
-            //    inputType = "Xbox";
-            //    // refresh UI hints to show new keybinds
-            //}
-        }
-        else if (Gamepad.current != null && Gamepad.current.name.Contains("Sony") || Gamepad.current != null && Gamepad.current.name.Contains("PlayStation"))
-        {
-            inputType = "PS";
-        }
-        //else if (inputType != "Sim Rig" && Input.anyKey || Input.GetMouseButtonDown(0))
-        //{
-        //    inputType = "Sim Rig";
-        //    // refresh UI hints to show new keybinds
-        //}
-        print(inputType);
-    }
+    
     void LookAround()
     {
         if (verLookValue < -0.75f)
         {
-            camera.transform.rotation = Quaternion.Euler(camera.transform.rotation.x, 180, camera.transform.rotation.z);
+            cam.transform.rotation = Quaternion.Euler(cam.transform.rotation.x, 180, cam.transform.rotation.z);
         }
         else if(horLookValue > 0.1f || horLookValue < -0.1f)
         {
-            camera.transform.rotation = Quaternion.Euler(camera.transform.rotation.x, horLookValue * 90, camera.transform.rotation.z); // change this rotation to apply on the camera
+            cam.transform.rotation = Quaternion.Euler(cam.transform.rotation.x, horLookValue * 90, cam.transform.rotation.z); // change this rotation to apply on the camera
         }
         else
         {
-            camera.transform.rotation = Quaternion.Euler(0, 0, 0);
+            cam.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }
