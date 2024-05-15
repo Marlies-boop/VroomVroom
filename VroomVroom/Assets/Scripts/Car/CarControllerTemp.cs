@@ -14,6 +14,7 @@ public class CarControllerTemp : MonoBehaviour
     public List<GameObject> meshes;
     public List<Light> lights;
     public WheelCollider WheelL, WheelR;
+    public Vector3 CoM;
     public float strength = 20000f;
     public float maxturn = 20f;
     public float antiroll = 5000.0f;
@@ -22,6 +23,7 @@ public class CarControllerTemp : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         inputmanager = GetComponent<CarInput>();
+        rb.centerOfMass = CoM;
     }
 
     private void Update()
@@ -38,7 +40,7 @@ public class CarControllerTemp : MonoBehaviour
         print(Speed);
         foreach (WheelCollider wheel in throttlewheels)
         {
-            wheel.motorTorque = strength * Time.deltaTime * inputmanager.driveValue;
+            wheel.motorTorque = strength * inputmanager.driveValue;
         }
 
         foreach (GameObject wheel in steeringwheels)
