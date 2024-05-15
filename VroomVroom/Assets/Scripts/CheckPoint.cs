@@ -16,6 +16,7 @@ public class CheckPoint : MonoBehaviour
     [Header("UI settings")]
     public Text lapText;
     public Text timeText;
+    public Text checkpointText;
     public Timer timer;
 
     [Header("Information")]
@@ -68,6 +69,7 @@ public class CheckPoint : MonoBehaviour
                 }
             }
 
+            bool correctCheckpoint = false;
             for (int i = 0; i < checkpoints.Length; i++)
             {
                 if (finished)
@@ -80,7 +82,8 @@ public class CheckPoint : MonoBehaviour
                 }
                 else if (thisCheckpoint == checkpoints[i] && i != currentCheckpoint)
                 {
-                    Debug.Log("Wrong checkpoint");
+                    checkpointText.text = "Wrong checkpoint";
+                    checkpointText.gameObject.SetActive(true);
                 }
             }
         }
