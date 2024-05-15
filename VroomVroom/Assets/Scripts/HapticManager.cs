@@ -80,7 +80,7 @@ public class HapticManager : MonoBehaviour
             //tick the effect and clean up when finished
             float lowSpeedComponent = 0f;
             float highSpeedComponent = 0f;
-            if (effect.Tick(Camera.main.transform.position, out lowSpeedComponent, out highSpeedComponent))
+            if (effect.Tick(UnityEngine.Camera.main.transform.position, out lowSpeedComponent, out highSpeedComponent))
             {
                 ActiveEffects.RemoveAt(index);
                 --index;
