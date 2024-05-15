@@ -58,6 +58,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Brake",
+                    "type": "Button",
+                    "id": "6eab3c6b-ef5d-4cf3-8788-159627dda479",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Lights",
+                    "type": "Button",
+                    "id": "a01e3253-6d69-41e4-84f9-f93be3a173fe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -401,6 +419,72 @@
                     "action": "ChangeCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4fa2ae86-5df4-419b-bec4-d0e8fee2e8b6",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4db88f57-8165-42d4-b4e0-27cbc058af4b",
+                    "path": "<DualShockGamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation Controller",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2430d63e-6e2b-43be-9f2a-1d1472b4da74",
+                    "path": "<XInputController>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox Controller",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84ba5e28-8819-4c30-ad8e-cc56ad20842c",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Lights",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f0e3c38-1aad-4ccd-9745-143711d5cd19",
+                    "path": "<DualShockGamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Playstation Controller",
+                    "action": "Lights",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a8194a80-aaa6-4963-808e-953fa2bf4ea8",
+                    "path": "<XInputController>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Xbox Controller",
+                    "action": "Lights",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -451,6 +535,34 @@
                     "action": "Drive",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Rumble",
+            "id": "248f79e7-3a06-4285-91b1-10619f9ab310",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "ccce3dc9-eab9-4810-ba62-9cc063c963d8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "926334b6-7860-4fa4-939c-e0c03673406a",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

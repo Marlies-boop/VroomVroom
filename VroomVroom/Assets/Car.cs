@@ -80,6 +80,24 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Brake"",
+                    ""type"": ""Button"",
+                    ""id"": ""6eab3c6b-ef5d-4cf3-8788-159627dda479"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Lights"",
+                    ""type"": ""Button"",
+                    ""id"": ""a01e3253-6d69-41e4-84f9-f93be3a173fe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -423,6 +441,72 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""action"": ""ChangeCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4fa2ae86-5df4-419b-bec4-d0e8fee2e8b6"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4db88f57-8165-42d4-b4e0-27cbc058af4b"",
+                    ""path"": ""<DualShockGamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Playstation Controller"",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2430d63e-6e2b-43be-9f2a-1d1472b4da74"",
+                    ""path"": ""<XInputController>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Controller"",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""84ba5e28-8819-4c30-ad8e-cc56ad20842c"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Lights"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f0e3c38-1aad-4ccd-9745-143711d5cd19"",
+                    ""path"": ""<DualShockGamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Playstation Controller"",
+                    ""action"": ""Lights"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8194a80-aaa6-4963-808e-953fa2bf4ea8"",
+                    ""path"": ""<XInputController>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox Controller"",
+                    ""action"": ""Lights"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -475,6 +559,34 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Rumble"",
+            ""id"": ""248f79e7-3a06-4285-91b1-10619f9ab310"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""ccce3dc9-eab9-4810-ba62-9cc063c963d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""926334b6-7860-4fa4-939c-e0c03673406a"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -508,9 +620,14 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         m_Car_Gears = m_Car.FindAction("Gears", throwIfNotFound: true);
         m_Car_Pause = m_Car.FindAction("Pause", throwIfNotFound: true);
         m_Car_ChangeCamera = m_Car.FindAction("ChangeCamera", throwIfNotFound: true);
+        m_Car_Brake = m_Car.FindAction("Brake", throwIfNotFound: true);
+        m_Car_Lights = m_Car.FindAction("Lights", throwIfNotFound: true);
         // Sim Rig
         m_SimRig = asset.FindActionMap("Sim Rig", throwIfNotFound: true);
         m_SimRig_Drive = m_SimRig.FindAction("Drive", throwIfNotFound: true);
+        // Rumble
+        m_Rumble = asset.FindActionMap("Rumble", throwIfNotFound: true);
+        m_Rumble_Newaction = m_Rumble.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -578,6 +695,8 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
     private readonly InputAction m_Car_Gears;
     private readonly InputAction m_Car_Pause;
     private readonly InputAction m_Car_ChangeCamera;
+    private readonly InputAction m_Car_Brake;
+    private readonly InputAction m_Car_Lights;
     public struct CarActions
     {
         private @CarClass m_Wrapper;
@@ -588,6 +707,8 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         public InputAction @Gears => m_Wrapper.m_Car_Gears;
         public InputAction @Pause => m_Wrapper.m_Car_Pause;
         public InputAction @ChangeCamera => m_Wrapper.m_Car_ChangeCamera;
+        public InputAction @Brake => m_Wrapper.m_Car_Brake;
+        public InputAction @Lights => m_Wrapper.m_Car_Lights;
         public InputActionMap Get() { return m_Wrapper.m_Car; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -615,6 +736,12 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
             @ChangeCamera.started += instance.OnChangeCamera;
             @ChangeCamera.performed += instance.OnChangeCamera;
             @ChangeCamera.canceled += instance.OnChangeCamera;
+            @Brake.started += instance.OnBrake;
+            @Brake.performed += instance.OnBrake;
+            @Brake.canceled += instance.OnBrake;
+            @Lights.started += instance.OnLights;
+            @Lights.performed += instance.OnLights;
+            @Lights.canceled += instance.OnLights;
         }
 
         private void UnregisterCallbacks(ICarActions instance)
@@ -637,6 +764,12 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
             @ChangeCamera.started -= instance.OnChangeCamera;
             @ChangeCamera.performed -= instance.OnChangeCamera;
             @ChangeCamera.canceled -= instance.OnChangeCamera;
+            @Brake.started -= instance.OnBrake;
+            @Brake.performed -= instance.OnBrake;
+            @Brake.canceled -= instance.OnBrake;
+            @Lights.started -= instance.OnLights;
+            @Lights.performed -= instance.OnLights;
+            @Lights.canceled -= instance.OnLights;
         }
 
         public void RemoveCallbacks(ICarActions instance)
@@ -700,6 +833,52 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         }
     }
     public SimRigActions @SimRig => new SimRigActions(this);
+
+    // Rumble
+    private readonly InputActionMap m_Rumble;
+    private List<IRumbleActions> m_RumbleActionsCallbackInterfaces = new List<IRumbleActions>();
+    private readonly InputAction m_Rumble_Newaction;
+    public struct RumbleActions
+    {
+        private @CarClass m_Wrapper;
+        public RumbleActions(@CarClass wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_Rumble_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_Rumble; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RumbleActions set) { return set.Get(); }
+        public void AddCallbacks(IRumbleActions instance)
+        {
+            if (instance == null || m_Wrapper.m_RumbleActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_RumbleActionsCallbackInterfaces.Add(instance);
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
+        }
+
+        private void UnregisterCallbacks(IRumbleActions instance)
+        {
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
+        }
+
+        public void RemoveCallbacks(IRumbleActions instance)
+        {
+            if (m_Wrapper.m_RumbleActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IRumbleActions instance)
+        {
+            foreach (var item in m_Wrapper.m_RumbleActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_RumbleActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public RumbleActions @Rumble => new RumbleActions(this);
     private int m_KBMSchemeIndex = -1;
     public InputControlScheme KBMScheme
     {
@@ -744,9 +923,15 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         void OnGears(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnChangeCamera(InputAction.CallbackContext context);
+        void OnBrake(InputAction.CallbackContext context);
+        void OnLights(InputAction.CallbackContext context);
     }
     public interface ISimRigActions
     {
         void OnDrive(InputAction.CallbackContext context);
+    }
+    public interface IRumbleActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }
