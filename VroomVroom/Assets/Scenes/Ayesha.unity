@@ -2037,7 +2037,7 @@ GameObject:
   - component: {fileID: 884543004}
   - component: {fileID: 884543003}
   m_Layer: 0
-  m_Name: LapTimerManager
+  m_Name: TimeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2056,9 +2056,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 563606546}
-  timeScale: 15
   lapsText: {fileID: 539371801}
   totalLaps: 3
+  timeScale: 30
 --- !u!4 &884543004
 Transform:
   m_ObjectHideFlags: 0
@@ -3984,7 +3984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1935253209
 MonoBehaviour:
   m_ObjectHideFlags: 0

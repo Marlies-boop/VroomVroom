@@ -11,38 +11,58 @@ public class Timer : MonoBehaviour
     private float minutes;
     private float hours;
 
+    [Header("UI References")]
     public Text timeText;
-    public float timeScale;
-
     public Text lapsText;
+
     private int lapsCompleted;
     public int totalLaps;
-   
+
+    [Header("Time Settings")]
+    public float timeScale = 1.0f;
+
+    public void StartTimer()
+    {
+        isRunning = true;
+    }
+
+    public void StopTimer()
+    {
+        isRunning = false;
+    }
+
+    public string GetFormattedTime()
+    {
+        return string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, Mathf.RoundToInt(seconds));
+    }
+
     void Update()
     {
-        seconds += (Time.deltaTime * timeScale);
-
-        float finalizedTime;
-        finalizedTime = Mathf.Round(seconds);
-
-        if (finalizedTime > 60)
+        if (isRunning)
         {
-            minutes += 1f;
-            seconds = seconds - 60f;
-        }
-        else if (minutes > 60)
-        {
-            hours += 1;
-            minutes = minutes - 60f;
-        }
+            float deltaTime = Time.deltaTime * timeScale;
 
-        UpdateUIText();
-        //timeText.text = hours + ":" + minutes + ":" + finalizedTime.ToString();
+            seconds += deltaTime;
+
+            if (seconds >= 60)
+            {
+                minutes++;
+                seconds -= 60;
+            }
+
+            if (minutes >= 60)
+            {
+                hours++;
+                minutes -= 60;
+            }
+
+            UpdateUIText();
+        }
     }
 
     void UpdateUIText()
     {
-        timeText.text = hours + ":" + minutes + ":" + Mathf.RoundToInt(seconds).ToString();
+        timeText.text = GetFormattedTime();
         lapsText.text = "Laps: " + lapsCompleted + "/" + totalLaps;
     }
 
@@ -54,7 +74,7 @@ public class Timer : MonoBehaviour
 
             if (lapsCompleted >= totalLaps)
             {
-                isRunning = false;
+                StopTimer();
             }
         }
     }
