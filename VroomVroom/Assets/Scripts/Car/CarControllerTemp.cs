@@ -13,12 +13,14 @@ public class CarControllerTemp : MonoBehaviour
     public List<GameObject> steeringwheels;
     public List<GameObject> meshes;
     public List<Light> lights;
+    public List<Light> reverselights;
     public WheelCollider WheelL, WheelR;
     public Vector3 CoM;
     public float strength = 20000f;
     public float maxturn = 20f;
     public float antiroll = 5000.0f;
     public float brakeTorque = 1000f;
+    public float downforcevalue = 50f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -100,15 +102,30 @@ public class CarControllerTemp : MonoBehaviour
 
         }
 
-        var antirollForce = (travelL - travelR) * antiroll;
+        //var antirollForce = (travelL - travelR) * antiroll;
 
-        if (groundedL)
+        //if (groundedL)
+        //{
+        //    rb.AddForceAtPosition(WheelL.transform.up * -antirollForce, WheelL.transform.position);
+        //}
+        //if (groundedR)
+        //{
+        //    rb.AddForceAtPosition(WheelR.transform.up * antirollForce, WheelR.transform.position);
+        //}
+
+        if (inputmanager.driveValue < 0)
         {
-            rb.AddForceAtPosition(WheelL.transform.up * -antirollForce, WheelL.transform.position);
+            foreach (Light light in reverselights)
+            {
+                light.intensity = 2;
+            }
         }
-        if (groundedR)
+        else
         {
-            rb.AddForceAtPosition(WheelR.transform.up * antirollForce, WheelR.transform.position);
+            foreach (Light light in reverselights)
+            {
+                light.intensity = 0;
+            }
         }
     }
 
@@ -118,5 +135,10 @@ public class CarControllerTemp : MonoBehaviour
         {
             light.intensity = light.intensity == 0 ? 2 : 0 ;
         }
+    }
+
+    private void addDownForce()
+    {
+        rb.AddForce(-transform.up * downforcevalue * rb.velocity.magnitude);
     }
 }
