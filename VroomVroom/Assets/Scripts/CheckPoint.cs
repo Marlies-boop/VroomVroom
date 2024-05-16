@@ -66,8 +66,9 @@ public class CheckPoint : MonoBehaviour
                     finished = true;
                     Debug.Log("Finished");
                 }
-                else
+                else if (currentLap != totalLaps)
                 {
+                    Debug.Log("Current lap");
                     currentLap++;
                     currentCheckpoint = 0;
                     Debug.Log($"Started lap {currentLap}");

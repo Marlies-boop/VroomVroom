@@ -63,7 +63,7 @@ public class Timer : MonoBehaviour
     void UpdateUIText()
     {
         timeText.text = GetFormattedTime();
-        lapsText.text = "Laps: " + lapsCompleted + "/" + totalLaps;
+       //lapsText.text = "Laps: " + lapsCompleted + "/" + totalLaps;
     }
 
     private void OnTriggerEnter(Collider other)
