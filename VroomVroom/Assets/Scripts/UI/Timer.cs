@@ -70,7 +70,7 @@ public class Timer : MonoBehaviour
     {
         if (other.CompareTag("FinishLine"))
         {
-            lapsCompleted++;
+            //lapsCompleted++;
 
             if (lapsCompleted >= totalLaps)
             {

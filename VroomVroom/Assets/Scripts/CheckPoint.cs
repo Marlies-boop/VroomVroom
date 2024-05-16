@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class CheckPoint : MonoBehaviour
     public Vector3[] respawnPoint;
     public Vector3 currentRespawn;
     public int currentIndex = 0;
+    public bool canFinish = true;
 
     [Header("Checkpoints")]
     public GameObject start;
@@ -34,13 +36,26 @@ public class CheckPoint : MonoBehaviour
         currentRespawn = respawnPoint[currentIndex]; 
         currentCheckpoint = 0;
         currentLap = 1;
+            
 
         started = false;
         finished = false;
+
+       
     }
 
     private void Update()
     {
+        if (currentCheckpoint == 1 && checkpoints[0].activeSelf == true)
+        {
+            checkpoints[0].SetActive(false);
+        }
+        else if (currentCheckpoint == checkpoints.Count() && checkpoints[0].activeSelf == false)
+        {
+            checkpoints[0].SetActive(true);
+            currentIndex = 0;
+        }
+        
         if (started && !finished)
         {
             lapText.text = "Lap: " + currentLap + "/" + totalLaps;
@@ -58,6 +73,8 @@ public class CheckPoint : MonoBehaviour
             {
                 Debug.Log("Started");
                 started = true;
+                canFinish = false;
+                Debug.Log($"Can finish: {canFinish}");
             }
             else if (thisCheckpoint == end && started)
             {
@@ -68,11 +85,13 @@ public class CheckPoint : MonoBehaviour
                 }
                 else if (currentLap != totalLaps)
                 {
+                    if (canFinish == true && checkpoints[currentCheckpoint] == checkpoints[7])
                     Debug.Log("Current lap");
                     currentLap++;
                     currentCheckpoint = 0;
                     Debug.Log($"Started lap {currentLap}");
                 }
+                
             }
 
             bool correctCheckpoint = false;

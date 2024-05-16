@@ -51739,11 +51739,14 @@ MonoBehaviour:
   - {x: 522.83, y: 3.0296, z: 812.18}
   - {x: 548.508, y: 3.34, z: 491.769}
   - {x: 739.602, y: 2.5, z: 340.135}
+  - {x: 739.602, y: 2.5, z: 340.135}
   currentRespawn: {x: 0, y: 0, z: 0}
   currentIndex: 0
+  canFinish: 1
   start: {fileID: 390824001}
   end: {fileID: 390824001}
   checkpoints:
+  - {fileID: 390824001}
   - {fileID: 746424441}
   - {fileID: 599646572}
   - {fileID: 1292723562}
