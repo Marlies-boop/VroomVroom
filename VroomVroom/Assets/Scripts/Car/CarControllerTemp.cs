@@ -8,19 +8,28 @@ public class CarControllerTemp : MonoBehaviour
 {
     public CarInput inputmanager;
     public Rigidbody rb;
-    public float Speed;
+    public AudioSource EngineDrive;
+    public AudioSource EngineIdle;
     public List<WheelCollider> throttlewheels;
+    public List<WheelCollider> steerwheels;
     public List<GameObject> steeringwheels;
     public List<GameObject> meshes;
     public List<Light> lights;
     public List<Light> reverselights;
     public WheelCollider WheelL, WheelR;
     public Vector3 CoM;
+    public int ShiftLength;
+    int Temp2;
+    float Temp1;
+    public float PitchBoost;
+    public float PitchRange;
     public float strength = 20000f;
     public float maxturn = 20f;
     public float antiroll = 5000.0f;
     public float brakeTorque = 1000f;
+    public float brakeTorqueFront = 1000f;
     public float downforcevalue = 50f;
+    public float Speed;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -33,6 +42,25 @@ public class CarControllerTemp : MonoBehaviour
         if (inputmanager.lightValue)
         {
             Headlights();
+        }
+
+        float SpeedRaw = rb.velocity.magnitude;
+
+        Temp1 = SpeedRaw / ShiftLength;
+        Temp2 = (int)Temp1;
+
+        float Difference = Temp1 - Temp2;
+
+        if (rb.velocity.magnitude > 0.5)
+        {
+            EngineDrive.pitch = Mathf.Lerp(EngineDrive.pitch, (PitchRange * Difference) * PitchBoost, .01f);
+            EngineIdle.volume = 0;
+            EngineDrive.volume = 1;
+        }
+        else
+        {
+            EngineIdle.volume = 1;
+            EngineDrive.volume = 0;
         }
     }
 
@@ -61,11 +89,21 @@ public class CarControllerTemp : MonoBehaviour
             foreach (WheelCollider wheel in throttlewheels)
             {
                 wheel.brakeTorque = brakeTorque;
+                wheel.motorTorque = 0;
+            }
+            foreach (WheelCollider wheel in steerwheels)
+            {
+                wheel.brakeTorque = brakeTorqueFront;
+                wheel.motorTorque = 0;
             }
         }
         else
         {
             foreach (WheelCollider wheel in throttlewheels)
+            {
+                wheel.brakeTorque = 0f;
+            }
+            foreach (WheelCollider wheel in steerwheels)
             {
                 wheel.brakeTorque = 0f;
             }
