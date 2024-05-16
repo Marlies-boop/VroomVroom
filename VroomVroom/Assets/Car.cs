@@ -559,6 +559,34 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Rumble"",
+            ""id"": ""248f79e7-3a06-4285-91b1-10619f9ab310"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""ccce3dc9-eab9-4810-ba62-9cc063c963d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""926334b6-7860-4fa4-939c-e0c03673406a"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -597,6 +625,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         // Sim Rig
         m_SimRig = asset.FindActionMap("Sim Rig", throwIfNotFound: true);
         m_SimRig_Drive = m_SimRig.FindAction("Drive", throwIfNotFound: true);
+        // Rumble
+        m_Rumble = asset.FindActionMap("Rumble", throwIfNotFound: true);
+        m_Rumble_Newaction = m_Rumble.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -802,6 +833,52 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         }
     }
     public SimRigActions @SimRig => new SimRigActions(this);
+
+    // Rumble
+    private readonly InputActionMap m_Rumble;
+    private List<IRumbleActions> m_RumbleActionsCallbackInterfaces = new List<IRumbleActions>();
+    private readonly InputAction m_Rumble_Newaction;
+    public struct RumbleActions
+    {
+        private @CarClass m_Wrapper;
+        public RumbleActions(@CarClass wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_Rumble_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_Rumble; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RumbleActions set) { return set.Get(); }
+        public void AddCallbacks(IRumbleActions instance)
+        {
+            if (instance == null || m_Wrapper.m_RumbleActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_RumbleActionsCallbackInterfaces.Add(instance);
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
+        }
+
+        private void UnregisterCallbacks(IRumbleActions instance)
+        {
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
+        }
+
+        public void RemoveCallbacks(IRumbleActions instance)
+        {
+            if (m_Wrapper.m_RumbleActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IRumbleActions instance)
+        {
+            foreach (var item in m_Wrapper.m_RumbleActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_RumbleActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public RumbleActions @Rumble => new RumbleActions(this);
     private int m_KBMSchemeIndex = -1;
     public InputControlScheme KBMScheme
     {
@@ -852,5 +929,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
     public interface ISimRigActions
     {
         void OnDrive(InputAction.CallbackContext context);
+    }
+    public interface IRumbleActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
     }
 }
