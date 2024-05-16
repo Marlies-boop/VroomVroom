@@ -5,19 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public CheckPoint checkpoint;
+    CarClass carInput;
     public static bool Paused = false;
     public GameObject PauseMenuCanvas;
-    public Transform respawnPoint;
-
+    public Transform player;
+    
+    private void Awake()
+    {
+        carInput = new CarClass();
+    }
+    private void OnEnable()
+    {
+        carInput.Enable();
+    }
+    private void OnDisable()
+    {
+        carInput.Disable();
+    }
     void Start()
     {
+        //checkpoint = GetComponent<CheckPoint>();
         Time.timeScale = 1f;
     }
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (carInput.Car.Pause.WasReleasedThisFrame())
         {
+            Debug.Log("Knop ingedrukt");
             if (Paused)
             {
                 Play();
@@ -30,6 +46,7 @@ public class PauseMenu : MonoBehaviour
     }
     void Stop()
     {
+        Debug.Log("Pauze");
         PauseMenuCanvas.SetActive(true);
         Time.timeScale = 0f;
         Paused = true;
@@ -49,9 +66,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Respawn()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.transform.position = respawnPoint.position;
-        player.transform.rotation = respawnPoint.rotation;
+        //GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log($"player position = {player.position}");
+        //Debug.Log($"current chekcpoint position = {checkpoint.currentRespawn.position}");
+        
+       player.position = checkpoint.currentRespawn;
+
+        //player.transform.rotation = respawnPoint.rotation;
 
         Play();
     }

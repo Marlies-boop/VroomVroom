@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class CheckPoint : MonoBehaviour
 {
+    public Vector3[] respawnPoint;
+    public Vector3 currentRespawn;
+    public int currentIndex = 0;
+
     [Header("Checkpoints")]
     public GameObject start;
     public GameObject end;
@@ -27,6 +31,7 @@ public class CheckPoint : MonoBehaviour
 
     private void Start()
     {
+        currentRespawn = respawnPoint[currentIndex]; 
         currentCheckpoint = 0;
         currentLap = 1;
 
@@ -79,6 +84,8 @@ public class CheckPoint : MonoBehaviour
                 {
                     Debug.Log("Correct checkpoint");
                     currentCheckpoint++;
+                    currentIndex++;
+                   currentRespawn = respawnPoint[currentIndex];
                 }
                 else if (thisCheckpoint == checkpoints[i] && i != currentCheckpoint)
                 {

@@ -23,6 +23,6 @@ public class SpeedMeter : MonoBehaviour
 
         speedKMH = Mathf.Clamp(speedKMH, 0f, maxSpeed);
 
-        textSpeed.text = "Speed: " + speedKMH.ToString("F0") + " KM/H";
+        textSpeed.text = "KM/H: " + speedKMH.ToString("F0");
     }
 }
