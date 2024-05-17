@@ -281,7 +281,7 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PS"",
+                    ""groups"": """",
                     ""action"": ""Drive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -292,7 +292,7 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PS"",
+                    ""groups"": """",
                     ""action"": ""Drive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -314,7 +314,7 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""path"": ""<XInputController>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox"",
+                    ""groups"": """",
                     ""action"": ""Drive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -325,7 +325,7 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""path"": ""<XInputController>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox"",
+                    ""groups"": """",
                     ""action"": ""Drive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -695,17 +695,40 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         {
             ""name"": ""KBM"",
             ""bindingGroup"": ""KBM"",
-            ""devices"": []
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         },
         {
             ""name"": ""PS"",
             ""bindingGroup"": ""PS"",
-            ""devices"": []
+            ""devices"": [
+                {
+                    ""devicePath"": ""<DualShockGamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         },
         {
             ""name"": ""Xbox"",
             ""bindingGroup"": ""Xbox"",
-            ""devices"": []
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         },
         {
             ""name"": ""Sim Rig"",
