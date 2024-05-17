@@ -26,9 +26,10 @@ public class Timer : MonoBehaviour
         isRunning = true;
     }
 
-    public void StopTimer()
+    public float StopTimer()
     {
         isRunning = false;
+        return timeScale;
     }
 
     public string GetFormattedTime()
@@ -56,7 +57,12 @@ public class Timer : MonoBehaviour
                 minutes -= 60;
             }
 
+
             UpdateUIText();
+        }
+        else
+        {
+            StopTimer();
         }
     }
 
