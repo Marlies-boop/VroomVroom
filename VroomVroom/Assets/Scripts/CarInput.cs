@@ -11,18 +11,11 @@ using UnityEngine.InputSystem.Controls;
 public class CarInput : MonoBehaviour
 {
     CarClass carInput;
-<<<<<<< Updated upstream
-    float driveValue;
-    float steerValue;
-    float horLookValue;
-    float verLookValue;
-=======
     public float driveValue;
     public float steerValue;
     public float lookValue;
     public bool brakeValue;
     public bool lightValue;
->>>>>>> Stashed changes
     int cameraType = 1;
     int gear = 1;
     int maxGear = 6;
@@ -61,17 +54,9 @@ public class CarInput : MonoBehaviour
         print(carInput.Car.Drive.ReadValue<float>());
         //print(UserInput.instance.drive.ReadValue<float>());
         steerValue = carInput.Car.Steer.ReadValue<float>(); // sets value for steering
-<<<<<<< Updated upstream
-        horLookValue = carInput.Car.LookH.ReadValue<float>(); // sets values for right stick looking
-        verLookValue = carInput.Car.RearView.ReadValue<float>(); // sets values for right stick looking
-=======
         //lookValue = carInput.Car.LookH.ReadValue<float>(); // sets values for right stick looking
         brakeValue = carInput.Car.Handbrake.IsPressed();
         lightValue = carInput.Car.Lights.WasReleasedThisFrame();
-        //var horLookValue = carInput.Car.LookH.ReadValue<float>(); // sets values for right stick looking
-        //var verLookValue = carInput.Car.RearView.ReadValue<float>(); // sets values for right stick looking
->>>>>>> Stashed changes
-        //print(carInput.Car.Drive.GetBindingDisplayString());
 
         if (carInput.Car.Gears.WasPressedThisFrame())
         {
@@ -87,9 +72,6 @@ public class CarInput : MonoBehaviour
             }
             // change camera position here
         }
-        transform.Translate(0, 0, driveValue * Time.deltaTime * 6f); // feel free to change these to other movements like rigidbody.velocity if its better
-        transform.Rotate(0, steerValue, 0); 
-        LookAround(); 
        
 
         
