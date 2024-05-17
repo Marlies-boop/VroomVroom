@@ -55,8 +55,8 @@ public class CarInput : MonoBehaviour
         print(carInput.Car.Drive.ReadValue<float>());
         //print(UserInput.instance.drive.ReadValue<float>());
         steerValue = carInput.Car.Steer.ReadValue<float>(); // sets value for steering
-        lookValue = carInput.Car.Look.ReadValue<float>(); // sets values for right stick looking
-        brakeValue = carInput.Car.Brake.IsPressed();
+        //lookValue = carInput.Car.Look.ReadValue<float>(); // sets values for right stick looking
+        brakeValue = carInput.Car.Handbrake.IsPressed();
         lightValue = carInput.Car.Lights.WasReleasedThisFrame();
         var horLookValue = carInput.Car.LookH.ReadValue<float>(); // sets values for right stick looking
         var verLookValue = carInput.Car.RearView.ReadValue<float>(); // sets values for right stick looking
@@ -81,19 +81,19 @@ public class CarInput : MonoBehaviour
         
     }
     
-    void LookAround()
-    {
-        if (verLookValue < -0.75f)
-        {
-            cam.transform.rotation = Quaternion.Euler(cam.transform.rotation.x, 180, cam.transform.rotation.z);
-        }
-        else if(horLookValue > 0.1f || horLookValue < -0.1f)
-        {
-            cam.transform.rotation = Quaternion.Euler(cam.transform.rotation.x, horLookValue * 90, cam.transform.rotation.z); // change this rotation to apply on the camera
-        }
-        else
-        {
-            cam.transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-    }
+    //void LookAround()
+    //{
+    //    if (verLookValue < -0.75f)
+    //    {
+    //        cam.transform.rotation = Quaternion.Euler(cam.transform.rotation.x, 180, cam.transform.rotation.z);
+    //    }
+    //    else if(horLookValue > 0.1f || horLookValue < -0.1f)
+    //    {
+    //        cam.transform.rotation = Quaternion.Euler(cam.transform.rotation.x, horLookValue * 90, cam.transform.rotation.z); // change this rotation to apply on the camera
+    //    }
+    //    else
+    //    {
+    //        cam.transform.rotation = Quaternion.Euler(0, 0, 0);
+    //    }
+    //}
 }
