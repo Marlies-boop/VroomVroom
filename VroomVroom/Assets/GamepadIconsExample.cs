@@ -1,4 +1,6 @@
 using System;
+using UnityEngine.InputSystem.DualShock;
+using UnityEngine.InputSystem.XInput;
 using UnityEngine.UI;
 
 ////TODO: have updateBindingUIEvent receive a control path string, too (in addition to the device layout name)
@@ -16,7 +18,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         public GamepadIcons xbox;
         public GamepadIcons ps4;
 
-        protected void OnEnable()
+        protected void Update()
         {
             // Hook into all updateBindingUIEvents on all RebindActionUI components in our hierarchy.
             var rebindUIComponents = transform.GetComponentsInChildren<RebindActionUI>();
@@ -33,9 +35,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 return;
 
             var icon = default(Sprite);
-            if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "DualShockGamepad"))
+            if (Gamepad.current is DualShockGamepad)
                 icon = ps4.GetSprite(controlPath);
-            else if (InputSystem.IsFirstLayoutBasedOnSecond(deviceLayoutName, "Gamepad"))
+            else if (Gamepad.current is XInputController)
                 icon = xbox.GetSprite(controlPath);
 
             var textComponent = component.bindingText;
@@ -93,7 +95,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                     case "start": return startButton;
                     case "select": return selectButton;
                     case "leftTrigger": return leftTrigger;
+                    case "leftTriggerButton": return leftTrigger;
                     case "rightTrigger": return rightTrigger;
+                    case "rightTriggerButton": return rightTrigger;
                     case "leftShoulder": return leftShoulder;
                     case "rightShoulder": return rightShoulder;
                     case "dpad": return dpad;
@@ -102,7 +106,19 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                     case "dpad/left": return dpadLeft;
                     case "dpad/right": return dpadRight;
                     case "leftStick": return leftStick;
+                    case "leftStick/up": return leftStick;
+                    case "leftStick/down": return leftStick;
+                    case "leftStick/left": return leftStick;
+                    case "leftStick/right": return leftStick;
+                    case "leftStick/X": return leftStick;
+                    case "leftStick/Y": return leftStick;
                     case "rightStick": return rightStick;
+                    case "rightStick/up": return rightStick;
+                    case "rightStick/down": return rightStick;
+                    case "rightStick/left": return rightStick;
+                    case "rightStick/right": return rightStick;
+                    case "rightStick/X": return rightStick;
+                    case "rightStick/Y": return rightStick;
                     case "leftStickPress": return leftStickPress;
                     case "rightStickPress": return rightStickPress;
                 }

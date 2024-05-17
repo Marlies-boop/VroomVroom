@@ -50,15 +50,17 @@ public class CarInput : MonoBehaviour
         }
 
         driveValue = carInput.Car.Drive.ReadValue<float>(); // sets value for driving
+        print(carInput.Car.Drive.ReadValue<float>());
+        //print(UserInput.instance.drive.ReadValue<float>());
         steerValue = carInput.Car.Steer.ReadValue<float>(); // sets value for steering
         horLookValue = carInput.Car.LookH.ReadValue<float>(); // sets values for right stick looking
         verLookValue = carInput.Car.RearView.ReadValue<float>(); // sets values for right stick looking
+        //print(carInput.Car.Drive.GetBindingDisplayString());
 
         if (carInput.Car.Gears.WasPressedThisFrame())
         {
             gear += (int)carInput.Car.Gears.ReadValue<float>(); // Changes gear up or down
-            gear = Mathf.Clamp(gear, minGear, maxGear); // Makes sure the gear doesnt go below or above the range
-            print(gear);
+            gear = Mathf.Clamp(gear, minGear, maxGear); // Makes sure the gear doesnt go below or above the ranges
         }
         if (carInput.Car.ChangeCamera.WasPressedThisFrame())
         {
@@ -67,7 +69,6 @@ public class CarInput : MonoBehaviour
             {
                 cameraType = 1;
             }
-            print(cameraType);
             // change camera position here
         }
         transform.Translate(0, 0, driveValue * Time.deltaTime * 6f); // feel free to change these to other movements like rigidbody.velocity if its better
