@@ -52,9 +52,7 @@ public class CarInput : MonoBehaviour
 
         driveValue = carInput.Car.Drive.ReadValue<float>(); // sets value for driving
         print(carInput.Car.Drive.ReadValue<float>());
-        //print(UserInput.instance.drive.ReadValue<float>());
         steerValue = carInput.Car.Steer.ReadValue<float>(); // sets value for steering
-        //lookValue = carInput.Car.LookH.ReadValue<float>(); // sets values for right stick looking
         brakeValue = carInput.Car.Handbrake.IsPressed();
         lightValue = carInput.Car.Lights.WasReleasedThisFrame();
 
