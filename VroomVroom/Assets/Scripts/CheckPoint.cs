@@ -24,6 +24,10 @@ public class CheckPoint : MonoBehaviour
     public Text timeText;
     public Text checkpointText;
     public Timer timer;
+    public GameObject win;
+    public GameObject UI;
+    public GameObject time;
+   
 
     [Header("Information")]
     private int currentCheckpoint;
@@ -40,8 +44,6 @@ public class CheckPoint : MonoBehaviour
 
         started = false;
         finished = false;
-
-       
     }
 
     private void Update()
@@ -60,6 +62,14 @@ public class CheckPoint : MonoBehaviour
         {
             lapText.text = "Lap: " + currentLap + "/" + totalLaps;
             timeText.text = timer.timeText.text;
+        }
+
+        if (currentLap == totalLaps)
+        {
+            win.SetActive(true);
+            time.GetComponent<Text>().text = timer.GetFormattedTime();
+            UI.SetActive(false);
+            Time.timeScale = 0f;
         }
     }
 
@@ -113,6 +123,9 @@ public class CheckPoint : MonoBehaviour
                     checkpointText.gameObject.SetActive(true);
                 }
             }
+
+
+
         }
     }
 }
