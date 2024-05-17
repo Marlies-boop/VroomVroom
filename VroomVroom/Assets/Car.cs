@@ -46,13 +46,31 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Look"",
+                    ""name"": ""LookH"",
                     ""type"": ""Value"",
                     ""id"": ""b704fe28-2b35-4531-a264-8ac843f3001e"",
-                    ""expectedControlType"": ""Stick"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Rear View"",
+                    ""type"": ""Button"",
+                    ""id"": ""be3caad0-39f5-4eab-a488-22acf8e32a6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Lights"",
+                    ""type"": ""Button"",
+                    ""id"": ""0d786e92-1844-4017-8bc8-f239354aa155"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Gears"",
@@ -82,18 +100,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Brake"",
+                    ""name"": ""Handbrake"",
                     ""type"": ""Button"",
-                    ""id"": ""6eab3c6b-ef5d-4cf3-8788-159627dda479"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Lights"",
-                    ""type"": ""Button"",
-                    ""id"": ""a01e3253-6d69-41e4-84f9-f93be3a173fe"",
+                    ""id"": ""51573503-8e33-4f7d-b423-ace2d03ccd04"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -113,9 +122,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""b3990f75-c2d0-4f19-951d-0f721c640c5c"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""name"": ""positive"",
+                    ""id"": ""ffd6ade5-610b-4c4b-8dee-574ba69d9c42"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KBM"",
@@ -124,9 +133,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""ffd6ade5-610b-4c4b-8dee-574ba69d9c42"",
-                    ""path"": ""<Keyboard>/w"",
+                    ""name"": ""negative"",
+                    ""id"": ""b3990f75-c2d0-4f19-951d-0f721c640c5c"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KBM"",
@@ -146,9 +155,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""acf2da0c-15f5-482c-8c03-6bbe0cb55df0"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""name"": ""positive"",
+                    ""id"": ""c62f5f82-8f10-4158-8898-b6aade11e983"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KBM"",
@@ -157,9 +166,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""c62f5f82-8f10-4158-8898-b6aade11e983"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""name"": ""negative"",
+                    ""id"": ""acf2da0c-15f5-482c-8c03-6bbe0cb55df0"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KBM"",
@@ -173,19 +182,8 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KBM;Playstation Controller;Xbox Controller;Sim Rig"",
+                    ""groups"": ""KBM;PS;Xbox;Sim Rig"",
                     ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""24b82a3b-07bf-4931-85da-f93f56860d89"",
-                    ""path"": ""<DualShockGamepad>/rightStick/X"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Playstation Controller"",
-                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -201,9 +199,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""53c28f44-9f82-4c0b-b14b-2296c862f73a"",
-                    ""path"": ""<Keyboard>/shift"",
+                    ""name"": ""positive"",
+                    ""id"": ""85944a08-bb1e-4867-beba-fcf3ee4491ad"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KBM"",
@@ -212,9 +210,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""85944a08-bb1e-4867-beba-fcf3ee4491ad"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""name"": ""negative"",
+                    ""id"": ""53c28f44-9f82-4c0b-b14b-2296c862f73a"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KBM"",
@@ -234,23 +232,23 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""111fa7c6-20b3-44ae-acf0-d2da1e5c71e0"",
-                    ""path"": ""<DualShockGamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Playstation Controller"",
-                    ""action"": ""Gears"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""positive"",
                     ""id"": ""ca89d96d-831c-4b00-8393-e8e2022c1c7c"",
                     ""path"": ""<DualShockGamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Playstation Controller"",
+                    ""groups"": ""PS"",
+                    ""action"": ""Gears"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""111fa7c6-20b3-44ae-acf0-d2da1e5c71e0"",
+                    ""path"": ""<DualShockGamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS"",
                     ""action"": ""Gears"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -261,7 +259,7 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Playstation Controller"",
+                    ""groups"": ""PS"",
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -278,23 +276,23 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""57953817-9eaf-4aae-8176-a9783efedc7a"",
-                    ""path"": ""<DualShockGamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Playstation Controller"",
-                    ""action"": ""Drive"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""positive"",
                     ""id"": ""a4f9854f-47de-4aea-a71c-2db7b921850d"",
                     ""path"": ""<DualShockGamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Playstation Controller"",
+                    ""groups"": """",
+                    ""action"": ""Drive"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""57953817-9eaf-4aae-8176-a9783efedc7a"",
+                    ""path"": ""<DualShockGamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""Drive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -311,56 +309,23 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""5ff75949-3c1a-4a2e-81f3-5e1cb4ca58a1"",
-                    ""path"": ""<XInputController>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Xbox Controller"",
-                    ""action"": ""Drive"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""positive"",
                     ""id"": ""218057a6-3af6-4058-88e3-4b89f0d4dfed"",
                     ""path"": ""<XInputController>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Controller"",
+                    ""groups"": """",
                     ""action"": ""Drive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""7af98e0c-07fa-427a-a579-d2eeabd40dcd"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Drive"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""1ffc0229-df50-447b-9baa-44d14a2912b4"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""id"": ""5ff75949-3c1a-4a2e-81f3-5e1cb4ca58a1"",
+                    ""path"": ""<XInputController>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Sim Rig"",
-                    ""action"": ""Drive"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""ac1fbfbd-0110-4943-8428-5cf768f2b381"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Sim Rig"",
+                    ""groups"": """",
                     ""action"": ""Drive"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -371,7 +336,7 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""path"": ""<XInputController>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Controller"",
+                    ""groups"": ""Xbox"",
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -388,59 +353,158 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""8d910d1d-b4be-4314-b295-8180127f5c3e"",
-                    ""path"": ""<XInputController>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Xbox Controller"",
-                    ""action"": ""Gears"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""positive"",
                     ""id"": ""b994c438-ecf3-4ad2-9eb3-abde40269225"",
                     ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Controller"",
+                    ""groups"": ""Xbox"",
                     ""action"": ""Gears"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""e2657abc-1756-4ad2-8e4f-4de4a3dd30f6"",
-                    ""path"": ""<XInputController>/rightStick/X"",
+                    ""name"": ""negative"",
+                    ""id"": ""8d910d1d-b4be-4314-b295-8180127f5c3e"",
+                    ""path"": ""<XInputController>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Controller"",
-                    ""action"": ""Look"",
+                    ""groups"": ""Xbox"",
+                    ""action"": ""Gears"",
                     ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""PS"",
+                    ""id"": ""45a4188b-bdc6-4da6-9033-8fd92f641bad"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookH"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""a40f86eb-0177-4d00-8c8f-af072786c3bf"",
-                    ""path"": ""<XInputController>/leftStick/X"",
+                    ""name"": ""positive"",
+                    ""id"": ""63ce05f1-4cf9-4f2e-b5e0-2a23d267eb04"",
+                    ""path"": ""<DualShockGamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Controller"",
-                    ""action"": ""Steer"",
+                    ""groups"": ""PS"",
+                    ""action"": ""LookH"",
                     ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""ffaeb21e-106b-457f-90e6-bd1053a6e2cb"",
+                    ""path"": ""<DualShockGamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS"",
+                    ""action"": ""LookH"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Xbox"",
+                    ""id"": ""35206cfa-06eb-4b5f-94ef-8b0b7d2842cd"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LookH"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""fc54a977-239c-40ca-a7a3-4be600165412"",
-                    ""path"": ""<DualShockGamepad>/leftStick/x"",
+                    ""name"": ""positive"",
+                    ""id"": ""78a69ada-91ed-4465-b4ee-5b365361ade6"",
+                    ""path"": ""<XInputController>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox"",
+                    ""action"": ""LookH"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""9c2defd7-dccb-47e5-8bde-a05403c4191d"",
+                    ""path"": ""<XInputController>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox"",
+                    ""action"": ""LookH"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""PS"",
+                    ""id"": ""23fb6ad4-d3f9-4dae-8b01-205fe867d278"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Steer"",
-                    ""isComposite"": false,
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""e386cb84-8116-4e05-9bbd-0ae9741e9649"",
+                    ""path"": ""<DualShockGamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS"",
+                    ""action"": ""Steer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""7d13301d-604d-4806-bbde-e0d11d5355d7"",
+                    ""path"": ""<DualShockGamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS"",
+                    ""action"": ""Steer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Xbox"",
+                    ""id"": ""9b451535-dd40-417c-87a1-e62b342d16a6"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Steer"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""ec6efe9c-2408-4f74-beb9-89b4187ae46a"",
+                    ""path"": ""<XInputController>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox"",
+                    ""action"": ""Steer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""349fb201-e3b2-44fc-9614-2f5fc4ec6d0d"",
+                    ""path"": ""<XInputController>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox"",
+                    ""action"": ""Steer"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -459,7 +523,7 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""path"": ""<DualShockGamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Playstation Controller"",
+                    ""groups"": ""PS"",
                     ""action"": ""ChangeCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -470,47 +534,47 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""path"": ""<XInputController>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Controller"",
+                    ""groups"": ""Xbox"",
                     ""action"": ""ChangeCamera"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4fa2ae86-5df4-419b-bec4-d0e8fee2e8b6"",
-                    ""path"": ""<Keyboard>/b"",
+                    ""id"": ""9a29506b-6034-4b12-8b9f-72c7b0f6822a"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KBM"",
-                    ""action"": ""Brake"",
+                    ""action"": ""Rear View"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4db88f57-8165-42d4-b4e0-27cbc058af4b"",
-                    ""path"": ""<DualShockGamepad>/leftShoulder"",
+                    ""id"": ""0f39cf3d-af9e-4ffa-bf54-a7c55cf1957f"",
+                    ""path"": ""<DualShockGamepad>/rightStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Playstation Controller"",
-                    ""action"": ""Brake"",
+                    ""groups"": ""PS"",
+                    ""action"": ""Rear View"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2430d63e-6e2b-43be-9f2a-1d1472b4da74"",
-                    ""path"": ""<XInputController>/leftShoulder"",
+                    ""id"": ""ccdbb2a0-117d-45d3-ad55-a1b33c738416"",
+                    ""path"": ""<XInputController>/rightStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Controller"",
-                    ""action"": ""Brake"",
+                    ""groups"": ""Xbox"",
+                    ""action"": ""Rear View"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""84ba5e28-8819-4c30-ad8e-cc56ad20842c"",
+                    ""id"": ""ad60214e-7208-4a83-8ac1-6af5de8f8495"",
                     ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -521,23 +585,56 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2f0e3c38-1aad-4ccd-9745-143711d5cd19"",
+                    ""id"": ""a1011356-0ed2-406e-93db-61f164faef5f"",
                     ""path"": ""<DualShockGamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Playstation Controller"",
+                    ""groups"": ""PS"",
                     ""action"": ""Lights"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a8194a80-aaa6-4963-808e-953fa2bf4ea8"",
+                    ""id"": ""953745e7-36ad-4647-895a-540b8fd7d59c"",
                     ""path"": ""<XInputController>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Xbox Controller"",
+                    ""groups"": ""Xbox"",
                     ""action"": ""Lights"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4586efe6-56fe-433c-96e7-6a76b2b4f10b"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Handbrake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96829fc3-05c5-4a61-90b1-1fd1ffff4e27"",
+                    ""path"": ""<DualShockGamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PS"",
+                    ""action"": ""Handbrake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""23aeb25a-cc08-4243-b65d-c590634bd1d2"",
+                    ""path"": ""<XInputController>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Xbox"",
+                    ""action"": ""Handbrake"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -592,51 +689,46 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
-        },
-        {
-            ""name"": ""Rumble"",
-            ""id"": ""248f79e7-3a06-4285-91b1-10619f9ab310"",
-            ""actions"": [
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""ccce3dc9-eab9-4810-ba62-9cc063c963d8"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""926334b6-7860-4fa4-939c-e0c03673406a"",
-                    ""path"": ""<Gamepad>/dpad/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""New action"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
         }
     ],
     ""controlSchemes"": [
         {
             ""name"": ""KBM"",
             ""bindingGroup"": ""KBM"",
-            ""devices"": []
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         },
         {
-            ""name"": ""Playstation Controller"",
-            ""bindingGroup"": ""Playstation Controller"",
-            ""devices"": []
+            ""name"": ""PS"",
+            ""bindingGroup"": ""PS"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<DualShockGamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         },
         {
-            ""name"": ""Xbox Controller"",
-            ""bindingGroup"": ""Xbox Controller"",
-            ""devices"": []
+            ""name"": ""Xbox"",
+            ""bindingGroup"": ""Xbox"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         },
         {
             ""name"": ""Sim Rig"",
@@ -649,18 +741,16 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         m_Car = asset.FindActionMap("Car", throwIfNotFound: true);
         m_Car_Drive = m_Car.FindAction("Drive", throwIfNotFound: true);
         m_Car_Steer = m_Car.FindAction("Steer", throwIfNotFound: true);
-        m_Car_Look = m_Car.FindAction("Look", throwIfNotFound: true);
+        m_Car_LookH = m_Car.FindAction("LookH", throwIfNotFound: true);
+        m_Car_RearView = m_Car.FindAction("Rear View", throwIfNotFound: true);
+        m_Car_Lights = m_Car.FindAction("Lights", throwIfNotFound: true);
         m_Car_Gears = m_Car.FindAction("Gears", throwIfNotFound: true);
         m_Car_Pause = m_Car.FindAction("Pause", throwIfNotFound: true);
         m_Car_ChangeCamera = m_Car.FindAction("ChangeCamera", throwIfNotFound: true);
-        m_Car_Brake = m_Car.FindAction("Brake", throwIfNotFound: true);
-        m_Car_Lights = m_Car.FindAction("Lights", throwIfNotFound: true);
+        m_Car_Handbrake = m_Car.FindAction("Handbrake", throwIfNotFound: true);
         // Sim Rig
         m_SimRig = asset.FindActionMap("Sim Rig", throwIfNotFound: true);
         m_SimRig_Drive = m_SimRig.FindAction("Drive", throwIfNotFound: true);
-        // Rumble
-        m_Rumble = asset.FindActionMap("Rumble", throwIfNotFound: true);
-        m_Rumble_Newaction = m_Rumble.FindAction("New action", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -724,24 +814,26 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
     private List<ICarActions> m_CarActionsCallbackInterfaces = new List<ICarActions>();
     private readonly InputAction m_Car_Drive;
     private readonly InputAction m_Car_Steer;
-    private readonly InputAction m_Car_Look;
+    private readonly InputAction m_Car_LookH;
+    private readonly InputAction m_Car_RearView;
+    private readonly InputAction m_Car_Lights;
     private readonly InputAction m_Car_Gears;
     private readonly InputAction m_Car_Pause;
     private readonly InputAction m_Car_ChangeCamera;
-    private readonly InputAction m_Car_Brake;
-    private readonly InputAction m_Car_Lights;
+    private readonly InputAction m_Car_Handbrake;
     public struct CarActions
     {
         private @CarClass m_Wrapper;
         public CarActions(@CarClass wrapper) { m_Wrapper = wrapper; }
         public InputAction @Drive => m_Wrapper.m_Car_Drive;
         public InputAction @Steer => m_Wrapper.m_Car_Steer;
-        public InputAction @Look => m_Wrapper.m_Car_Look;
+        public InputAction @LookH => m_Wrapper.m_Car_LookH;
+        public InputAction @RearView => m_Wrapper.m_Car_RearView;
+        public InputAction @Lights => m_Wrapper.m_Car_Lights;
         public InputAction @Gears => m_Wrapper.m_Car_Gears;
         public InputAction @Pause => m_Wrapper.m_Car_Pause;
         public InputAction @ChangeCamera => m_Wrapper.m_Car_ChangeCamera;
-        public InputAction @Brake => m_Wrapper.m_Car_Brake;
-        public InputAction @Lights => m_Wrapper.m_Car_Lights;
+        public InputAction @Handbrake => m_Wrapper.m_Car_Handbrake;
         public InputActionMap Get() { return m_Wrapper.m_Car; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -757,9 +849,15 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
             @Steer.started += instance.OnSteer;
             @Steer.performed += instance.OnSteer;
             @Steer.canceled += instance.OnSteer;
-            @Look.started += instance.OnLook;
-            @Look.performed += instance.OnLook;
-            @Look.canceled += instance.OnLook;
+            @LookH.started += instance.OnLookH;
+            @LookH.performed += instance.OnLookH;
+            @LookH.canceled += instance.OnLookH;
+            @RearView.started += instance.OnRearView;
+            @RearView.performed += instance.OnRearView;
+            @RearView.canceled += instance.OnRearView;
+            @Lights.started += instance.OnLights;
+            @Lights.performed += instance.OnLights;
+            @Lights.canceled += instance.OnLights;
             @Gears.started += instance.OnGears;
             @Gears.performed += instance.OnGears;
             @Gears.canceled += instance.OnGears;
@@ -769,12 +867,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
             @ChangeCamera.started += instance.OnChangeCamera;
             @ChangeCamera.performed += instance.OnChangeCamera;
             @ChangeCamera.canceled += instance.OnChangeCamera;
-            @Brake.started += instance.OnBrake;
-            @Brake.performed += instance.OnBrake;
-            @Brake.canceled += instance.OnBrake;
-            @Lights.started += instance.OnLights;
-            @Lights.performed += instance.OnLights;
-            @Lights.canceled += instance.OnLights;
+            @Handbrake.started += instance.OnHandbrake;
+            @Handbrake.performed += instance.OnHandbrake;
+            @Handbrake.canceled += instance.OnHandbrake;
         }
 
         private void UnregisterCallbacks(ICarActions instance)
@@ -785,9 +880,15 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
             @Steer.started -= instance.OnSteer;
             @Steer.performed -= instance.OnSteer;
             @Steer.canceled -= instance.OnSteer;
-            @Look.started -= instance.OnLook;
-            @Look.performed -= instance.OnLook;
-            @Look.canceled -= instance.OnLook;
+            @LookH.started -= instance.OnLookH;
+            @LookH.performed -= instance.OnLookH;
+            @LookH.canceled -= instance.OnLookH;
+            @RearView.started -= instance.OnRearView;
+            @RearView.performed -= instance.OnRearView;
+            @RearView.canceled -= instance.OnRearView;
+            @Lights.started -= instance.OnLights;
+            @Lights.performed -= instance.OnLights;
+            @Lights.canceled -= instance.OnLights;
             @Gears.started -= instance.OnGears;
             @Gears.performed -= instance.OnGears;
             @Gears.canceled -= instance.OnGears;
@@ -797,12 +898,9 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
             @ChangeCamera.started -= instance.OnChangeCamera;
             @ChangeCamera.performed -= instance.OnChangeCamera;
             @ChangeCamera.canceled -= instance.OnChangeCamera;
-            @Brake.started -= instance.OnBrake;
-            @Brake.performed -= instance.OnBrake;
-            @Brake.canceled -= instance.OnBrake;
-            @Lights.started -= instance.OnLights;
-            @Lights.performed -= instance.OnLights;
-            @Lights.canceled -= instance.OnLights;
+            @Handbrake.started -= instance.OnHandbrake;
+            @Handbrake.performed -= instance.OnHandbrake;
+            @Handbrake.canceled -= instance.OnHandbrake;
         }
 
         public void RemoveCallbacks(ICarActions instance)
@@ -866,52 +964,6 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
         }
     }
     public SimRigActions @SimRig => new SimRigActions(this);
-
-    // Rumble
-    private readonly InputActionMap m_Rumble;
-    private List<IRumbleActions> m_RumbleActionsCallbackInterfaces = new List<IRumbleActions>();
-    private readonly InputAction m_Rumble_Newaction;
-    public struct RumbleActions
-    {
-        private @CarClass m_Wrapper;
-        public RumbleActions(@CarClass wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Rumble_Newaction;
-        public InputActionMap Get() { return m_Wrapper.m_Rumble; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(RumbleActions set) { return set.Get(); }
-        public void AddCallbacks(IRumbleActions instance)
-        {
-            if (instance == null || m_Wrapper.m_RumbleActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_RumbleActionsCallbackInterfaces.Add(instance);
-            @Newaction.started += instance.OnNewaction;
-            @Newaction.performed += instance.OnNewaction;
-            @Newaction.canceled += instance.OnNewaction;
-        }
-
-        private void UnregisterCallbacks(IRumbleActions instance)
-        {
-            @Newaction.started -= instance.OnNewaction;
-            @Newaction.performed -= instance.OnNewaction;
-            @Newaction.canceled -= instance.OnNewaction;
-        }
-
-        public void RemoveCallbacks(IRumbleActions instance)
-        {
-            if (m_Wrapper.m_RumbleActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IRumbleActions instance)
-        {
-            foreach (var item in m_Wrapper.m_RumbleActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_RumbleActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public RumbleActions @Rumble => new RumbleActions(this);
     private int m_KBMSchemeIndex = -1;
     public InputControlScheme KBMScheme
     {
@@ -921,22 +973,22 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_KBMSchemeIndex];
         }
     }
-    private int m_PlaystationControllerSchemeIndex = -1;
-    public InputControlScheme PlaystationControllerScheme
+    private int m_PSSchemeIndex = -1;
+    public InputControlScheme PSScheme
     {
         get
         {
-            if (m_PlaystationControllerSchemeIndex == -1) m_PlaystationControllerSchemeIndex = asset.FindControlSchemeIndex("Playstation Controller");
-            return asset.controlSchemes[m_PlaystationControllerSchemeIndex];
+            if (m_PSSchemeIndex == -1) m_PSSchemeIndex = asset.FindControlSchemeIndex("PS");
+            return asset.controlSchemes[m_PSSchemeIndex];
         }
     }
-    private int m_XboxControllerSchemeIndex = -1;
-    public InputControlScheme XboxControllerScheme
+    private int m_XboxSchemeIndex = -1;
+    public InputControlScheme XboxScheme
     {
         get
         {
-            if (m_XboxControllerSchemeIndex == -1) m_XboxControllerSchemeIndex = asset.FindControlSchemeIndex("Xbox Controller");
-            return asset.controlSchemes[m_XboxControllerSchemeIndex];
+            if (m_XboxSchemeIndex == -1) m_XboxSchemeIndex = asset.FindControlSchemeIndex("Xbox");
+            return asset.controlSchemes[m_XboxSchemeIndex];
         }
     }
     private int m_SimRigSchemeIndex = -1;
@@ -952,19 +1004,16 @@ public partial class @CarClass: IInputActionCollection2, IDisposable
     {
         void OnDrive(InputAction.CallbackContext context);
         void OnSteer(InputAction.CallbackContext context);
-        void OnLook(InputAction.CallbackContext context);
+        void OnLookH(InputAction.CallbackContext context);
+        void OnRearView(InputAction.CallbackContext context);
+        void OnLights(InputAction.CallbackContext context);
         void OnGears(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnChangeCamera(InputAction.CallbackContext context);
-        void OnBrake(InputAction.CallbackContext context);
-        void OnLights(InputAction.CallbackContext context);
+        void OnHandbrake(InputAction.CallbackContext context);
     }
     public interface ISimRigActions
     {
         void OnDrive(InputAction.CallbackContext context);
-    }
-    public interface IRumbleActions
-    {
-        void OnNewaction(InputAction.CallbackContext context);
     }
 }
